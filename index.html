@@ -38,21 +38,29 @@
             border-radius: 8px;
         }
         .share-btn {
-            background-color: #3b5998;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
             cursor: pointer;
-            margin-bottom: 20px;
-            display: inline-block;
         }
-        .instagram-link {
-            color: #833ab4;
-            text-decoration: none;
+        .share-option {
+            display: none;
             margin-top: 10px;
-            display: block;
+        }
+        .share-option a {
+            display: inline-block;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .share-icon {
+            width: 30px; /* Adjust the size as needed */
+            height: auto;
+            margin-right: 5px; /* Add some space between icons */
+        }
+        .instagram-icon {
+            width: 30px;
+            height: auto;
+        }
+        .copy-icon {
+            width: 30px;
+            height: auto;
         }
     </style>
 </head>
@@ -63,17 +71,48 @@
         <p>Wishing you a vibrant and colorful Holi filled with joy, laughter, and lots of spice!</p>
         <p>May this festival of colors paint your life with happiness and prosperity.</p>
         <p>From all of us at ManYogSpices, have a wonderful celebration!</p>
-        <a href="#" class="share-btn" onclick="sharePage()">Share this page</a>
+        <div class="share-btn">
+            <img src="whatsapp.png" alt="WhatsApp" class="share-icon" onclick="shareOnWhatsApp()">
+            <img src="facebook.png" alt="Facebook" class="share-icon" onclick="shareOnFacebook()">
+            <img src="instagram.png" alt="Instagram" class="share-icon" onclick="shareOnInstagram()">
+            <img src="copy.png" alt="Copy" class="share-icon" onclick="copyLink()">
+        </div>
+        <div class="share-option">
+            <a href="#" onclick="shareOnWhatsApp()">WhatsApp</a>
+            <a href="#" onclick="shareOnFacebook()">Facebook</a>
+            <a href="#" onclick="shareOnInstagram()">Instagram</a>
+            <a href="#" onclick="copyLink()">Copy Link</a>
+        </div>
         <a href="https://www.instagram.com/manyogspicesoffic7iial" class="instagram-link" target="_blank">Follow us on Instagram</a>
     </div>
 
     <script>
-        function sharePage() {
-            // Get current page URL
+        function shareOnWhatsApp() {
             var pageUrl = window.location.href;
-            // Open share dialog with page URL
-            window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(pageUrl), 'Share This Page', 'width=600,height=400');
+            var text = encodeURIComponent("Check out this Holi wish from ManYogSpices: " + pageUrl);
+            window.open("https://api.whatsapp.com/send?text=" + text);
         }
+
+        function shareOnFacebook() {
+            var pageUrl = window.location.href;
+            window.open("https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(pageUrl));
+        }
+
+        function shareOnInstagram() {
+            var pageUrl = window.location.href;
+            window.open("https://www.instagram.com/?url=" + encodeURIComponent(pageUrl));
+        }
+
+        function copyLink() {
+            var pageUrl = window.location.href;
+            navigator.clipboard.writeText(pageUrl);
+            alert("Link copied to clipboard!");
+        }
+
+        document.querySelector('.share-btn').addEventListener('click', function() {
+            var shareOptions = document.querySelector('.share-option');
+            shareOptions.style.display = (shareOptions.style.display === 'none' || shareOptions.style.display === '') ? 'block' : 'none';
+        });
     </script>
 </body>
 </html>
