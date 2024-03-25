@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holi Wishes from ManYog Spices</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            /* Set background image */
+            background-image: url('background.jpg');
+            /* Center and scale the background image */
+            background-position: center;
+            background-size: cover;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Add opacity to improve text readability */
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #e67e22;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        .holi-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .share-btn {
+            background-color: #3b5998;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .instagram-link {
+            color: #833ab4;
+            text-decoration: none;
+            margin-top: 10px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="holi_spices.jpg" alt="Holi Spices" class="holi-image">
+        <h1>Happy Holi from ManYog Spices!</h1>
+        <p>Wishing you a vibrant and colorful Holi filled with joy, laughter, and lots of spice!</p>
+        <p>May this festival of colors paint your life with happiness and prosperity.</p>
+        <p>From all of us at ManYog Spices, have a wonderful celebration!</p>
+        <a href="#" class="share-btn" onclick="sharePage()">Share this page</a>
+        <a href="https://www.instagram.com/manyogspicesoffic7iial" class="instagram-link" target="_blank">Follow us on Instagram</a>
+    </div>
+
+    <script>
+        function sharePage() {
+            // Get current page URL
+            var pageUrl = window.location.href;
+            // Open share dialog with page URL
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(pageUrl), 'Share This Page', 'width=600,height=400');
+        }
+    </script>
+</body>
+</html>
