@@ -20,34 +20,47 @@ header {
     background-color: #f8f8f8;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo img {
-    max-height: 40px; /* Adjust the maximum height of the logo */
+    max-height: 150px;
     width: auto;
+}
+
+nav {
+    flex: 1; /* Fill remaining space */
 }
 
 nav ul {
     list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Align links to the right */
 }
 
-nav ul li {
-    display: inline-block;
+.nav-links li {
     margin-left: 20px;
 }
 
-nav ul li:first-child {
+.nav-links li:first-child {
     margin-left: 0;
 }
 
-nav ul li a {
+.nav-links li a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-nav ul li a:hover {
-    color: #007bff;
+.nav-links li a:hover {
+    background-color: #007bff;
+    color: #fff;
 }
 
 /* Product Categories Styles */
@@ -127,10 +140,10 @@ footer {
 }
 
 .banner img {
-    max-width: 100% !important;
-    height: auto !important;
-    display: block !important;
-    margin: 0 auto !important;
+    max-width: 100%;
+    height: auto;
+    display: auto;
+    max-width: 100%;
 }
 
 .btn {
@@ -144,5 +157,22 @@ footer {
 }
 
 .btn:hover {
+    background-color: #0056b3;
+}
+
+/* To style the navigation links as buttons, you can apply similar CSS rules to the navigation links. Here's how you can do it: */
+
+.nav-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-right: 10px; /* Adjust spacing between buttons */
+}
+
+.nav-link:hover {
     background-color: #0056b3;
 }
