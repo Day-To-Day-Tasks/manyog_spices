@@ -8,12 +8,13 @@ document.addEventListener("DOMContentLoaded", function() {
             const productName = this.parentElement.querySelector('span').textContent;
             const packSize = parseInt(this.parentElement.querySelector('.pack-size').value);
             const quantity = parseInt(this.parentElement.querySelector('.quantity').value);
-            const totalPerItem = packSize * quantity;
+            const pricePerGram = parseFloat(this.parentElement.querySelector('.pack-size').selectedOptions[0].getAttribute('data-price'));
+            const totalPricePerItem = pricePerGram * quantity;
 
-            total += totalPerItem;
+            total += totalPricePerItem;
 
             const listItem = document.createElement("li");
-            listItem.textContent = `${productName} - ${quantity} x ${packSize}g - Rs. ${totalPerItem}`;
+            listItem.textContent = `${productName} - ${quantity} x ${packSize}g - Rs. ${totalPricePerItem}`;
             cartItems.appendChild(listItem);
 
             totalPrice.textContent = "Total: Rs. " + total.toFixed(2);
