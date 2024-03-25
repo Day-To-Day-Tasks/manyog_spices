@@ -65,7 +65,7 @@ nav ul {
 
 /* Product Categories Styles */
 .product-categories {
-    padding: 20px 0;
+    margin-bottom: 100px; /* Add some bottom margin to create space for the shopping cart */
 }
 
 .product-categories .container {
@@ -99,13 +99,19 @@ footer {
     text-align: center;
 }
 
+
+/* shopping cart */
+
+/* CSS for the shopping cart */
 .cart {
     position: fixed;
-    top: 0;
+    bottom: 0;
     right: 0;
+    left: 0; /* Ensures it stretches across the entire viewport */
     background-color: #f8f8f8;
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Add shadow at the top */
+    z-index: 9999; /* Ensure it appears above other elements */
 }
 
 .cart h2 {
@@ -125,7 +131,7 @@ footer {
     font-weight: bold;
 }
 
-.cart #checkout-btn {
+.cart .checkout-btn {
     display: block;
     margin-top: 10px;
     padding: 10px;
@@ -133,11 +139,14 @@ footer {
     color: #fff;
     border: none;
     cursor: pointer;
+    text-align: center;
+    text-decoration: none;
 }
 
-.cart #checkout-btn:hover {
+.cart .checkout-btn:hover {
     background-color: #0056b3;
 }
+
 
 .banner img {
     max-width: 100%;
