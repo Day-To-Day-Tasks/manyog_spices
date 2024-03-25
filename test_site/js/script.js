@@ -1,7 +1,20 @@
 document.addEventListener("DOMContentLoaded", function() {
     const cartItems = document.getElementById("cart-items");
     const totalPrice = document.getElementById("total-price");
+    const checkoutBtn = document.getElementById("checkout-btn");
+
     let total = 0;
+    let selectedItems = [];
+
+    // Function to update the list of selected items
+    function updateSelectedItems() {
+        cartItems.innerHTML = "";
+        selectedItems.forEach(item => {
+            const li = document.createElement("li");
+            li.textContent = `${item.quantity} x ${item.product} (${item.packSize}g) - Rs. ${item.totalPrice}`;
+            cartItems.appendChild(li);
+        });
+    }
 
     document.querySelectorAll(".add-to-cart").forEach(button => {
         button.addEventListener("click", function() {
@@ -13,19 +26,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
             total += totalPricePerItem;
 
-            const listItem = document.createElement("li");
-            listItem.textContent = `${productName} - ${quantity} x ${packSize}g - Rs. ${totalPricePerItem}`;
-            cartItems.appendChild(listItem);
+            const item = {
+                product: productName,
+                packSize: packSize,
+                quantity: quantity,
+                totalPrice: totalPricePerItem
+            };
 
+            selectedItems.push(item);
+
+            updateSelectedItems();
             totalPrice.textContent = "Total: Rs. " + total.toFixed(2);
         });
     });
 
-    const checkoutBtn = document.getElementById("checkout-btn");
     checkoutBtn.addEventListener("click", function() {
-        alert("Thank you for your purchase!");
-        cartItems.innerHTML = "";
-        total = 0;
-        totalPrice.textContent = "Total: Rs. 0";
+        // Store selected items in local storage
+        localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
+        localStorage.setItem("totalPrice", total.toFixed(2));
+
+        // Redirect to checkout page
+        window.location.href = "checkout.html";
     });
 });
+

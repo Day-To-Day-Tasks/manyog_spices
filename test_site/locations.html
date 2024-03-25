@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ManYogSpices - Our Locations</title>
     <link rel="stylesheet" href="css/style.css">
-    <script defer src="script.js"></script>
+    <!-- Replace YOUR_API_KEY with your actual Google Maps API key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script src="script.js" defer></script>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div
-        class="logo">
+        <div class="logo">
             <img src="images/logo.png" alt="ManYogSpices Logo">
         </div>
         <nav>
@@ -27,7 +34,7 @@
     <section class="locations-map">
         <div class="container">
             <h2>Our Locations</h2>
-            <!-- Add Google Maps integration or location details here -->
+            <div id="map"></div>
         </div>
     </section>
 
@@ -45,4 +52,3 @@
     </footer>
 </body>
 </html>
-
