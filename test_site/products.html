@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ManYogSpices - Products</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="ManYogSpices Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="locations.html">Our Locations</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="product-categories">
+        <div class="container">
+            <h2>Our Product Categories</h2>
+            <div class="category">
+                <h3>Ground Spices</h3>
+                <p>Ground spices are spices that are finely powdered and commonly used in cooking to add flavor, color, and aroma to dishes. Explore our range of ground spices below.</p>
+                <ul>
+                    <li>
+                        <img src="images/turmeric-powder.jpg" alt="Turmeric">
+                        <span>Turmeric</span>
+                        <select class="pack-size" data-product="Turmeric">
+                            <option value="100">100g</option>
+                            <option value="200">200g</option>
+                            <option value="500">500g</option>
+                        </select>
+                        <input type="number" class="quantity" value="1" min="1" max="10">
+                        <button class="add-to-cart">Add to Cart</button>
+                    </li>
+                    <!-- Add similar list items for other products -->
+                </ul>
+            </div>
+            <!-- Add other categories if needed -->
+        </div>
+    </section>
+
+    <div id="cart" class="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <div id="total-price">Total: Rs. 0</div>
+        <button id="checkout-btn">Checkout</button>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ManYogSpices. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
