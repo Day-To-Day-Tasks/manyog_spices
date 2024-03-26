@@ -30,6 +30,43 @@ header {
     width: auto;
 }
 
+/* Featured Products Section */
+.featured-products .container {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;  Center the items horizontally
+}
+
+.featured-products h2 {
+    margin-bottom: 20px;
+}
+
+.featured-products-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-card {
+    width: calc(50% - 20px); /* Adjust width and margin */
+    margin: 20px 10px; /* Adjust margin */
+    text-align: center; /* Center the content */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.product-card h3 {
+    margin-top: 10px;
+}
+
+.product-card p {
+    margin-top: 10px;
+}
+
+
 nav {
     flex: 1; /* Fill remaining space */
 }
